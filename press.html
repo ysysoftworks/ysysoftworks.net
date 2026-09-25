@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Press - YSY Softworks</title>
+<link rel="stylesheet" href="src/theme.css?v=6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Orbitron:wght@500;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+.press-hero {
+  padding: 80px 0 64px;
+  border-bottom: 1px solid var(--line);
+  display: grid; grid-template-columns: 1.2fr 1fr; gap: 64px; align-items: end;
+}
+@media (max-width: 800px) { .press-hero { grid-template-columns: 1fr; gap: 24px; padding: 48px 0 32px; } }
+.press-hero h1 {
+  font-family: var(--font-display); font-weight: 900;
+  font-size: clamp(40px, 6vw, 80px); line-height: 0.97;
+  letter-spacing: 0.01em; margin: 16px 0 0;
+}
+.press-hero h1 em { font-style: normal; color: var(--accent); }
+.press-hero .lead { color: var(--ink-dim); font-size: 18px; line-height: 1.7; margin: 0; }
+
+.press-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap); padding: 64px 0;
+}
+@media (max-width: 900px) { .press-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 580px) { .press-grid { grid-template-columns: 1fr; } }
+.press-card {
+  padding: 36px 32px; border: 1px solid var(--line); border-radius: 6px;
+  background: var(--bg-1); display: flex; flex-direction: column; gap: 14px;
+  transition: border-color .2s, box-shadow .2s;
+}
+.press-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 24px rgba(2,132,199,0.08);
+}
+.press-card .tag {
+  font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent);
+}
+.press-card h3 {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: 20px; margin: 0; color: var(--ink);
+}
+.press-card p { color: var(--ink-dim); font-size: 16px; line-height: 1.6; margin: 0; flex: 1; }
+.press-card a {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--accent); margin-top: auto;
+  transition: opacity .2s;
+}
+.press-card a:hover { opacity: 0.7; }
+
+.press-body {
+  max-width: 820px; padding: 0 0 64px;
+  border-top: 1px solid var(--line); padding-top: 64px;
+}
+.press-body p {
+  font-size: 18px; color: var(--ink-dim); line-height: 1.75; margin: 0 0 18px;
+}
+
+.cta-row {
+  display: flex; gap: 16px; flex-wrap: wrap;
+  padding: 48px 0 80px; border-top: 1px solid var(--line);
+}
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script>
+// Game catalog for YSY Softworks - real cover art URLs pulled from ysysoftworks.net.
+// Fabricated metadata (genre, release, tagline, description) is filled in for layout purposes;
+// these are placeholders - replace with real marketing copy when available.
+
+window.YSY_GAMES = [
+  {
+    slug: "insurgence-last-wishes",
+    title: "Insurgence - Last Wishes",
+    cover: "https://lh3.googleusercontent.com/sitesv/AA5AbUBZ2Z7Zkfz8udOoyneargDOS4-XwQ0Y1w2vfcrL8jTfhv8ZQUw5KA5FjKFjHDk5MQ6a9YxDqAjw8JLIs2vJcXLLHu5nA-ZsoyJPu-T1E-rrh1xEzZasDvqVhCprQheN36V8IHYxVtzCFdMsC0sk87_SApebmbZo9Hn97cxtL4cRs7_pH13xrtSIHxQ=w1280",
+    genre: "Tactical RPG",
+    platforms: ["PC", "Steam"],
+    status: "Out Now",
+    release: "2025-11-14",
+    featured: true,
+    featuredOrder: 1,
+    description: "Close the Insurgence saga with Last Wishes - a turn-based tactical odyssey where every fallen comrade rewrites the battlefield.",
+  },
+  {
+    slug: "transcendence-legacy-voidswept",
+    title: "Transcendence Legacy - Voidswept",
+    cover: "https://lh3.googleusercontent.com/sitesv/AA5AbUC5ldXj0M3NUr2wC64BE915jR6YSBPQfwcGpkkqsrj_c5eZMg1h5lH8EVTTD-T2EqvVp-asaRyJbFTuEj7BOpVP1bVnBrLR59aHqL29YDlnb0u7WyXOOHtydV953hy1PviY_mMp-nZZGmDvTwzLK6GfO3POBbfJig2D8YuZqV8O4600sbWbqW9RvelDlwE2U3h8wKpPE8-kY0ULb7-6zIlne2bi1ODb3viH=w1280",
+    genre: "Action RPG",
+    platforms: ["PC", "Steam"],
+    status: "Out Now",
+    release: "2025-09-02",
+    featured: true,
+    featuredOrder: 2,
+    description: "A spellbound action-RPG set in a shattered cosmos, where every constellation hides a lost piece of memory.",
+  },
+  {
+    slug: "bail-force",
+    title: "Bail Force",
+    cover: "https://lh3.googleusercontent.com/sitesv/AA5AbUClNHeocs0TCa2q4GqozPdxQikMS5isYWsUZlPFJdJR2F3sCVMT9gJrick57xibN9KNVzghWNOtHpC2MkeFciDryPl1ocY-OYDuErp6Vjllyj58dikEl3NMPk7FcpckL1tpTPA7Mgq46Y0KkKEDulueXIlHMNegkqY2E1_QsELdjcid9AN6DL-eIPk=w1280",
+    genre: "Action",
+    platforms: ["PC", "Steam"],
+    status: "Out Now",
+    release: "2025-07-18",
+    featured: true,
+    featuredOrder: 3,
+    description: "Chase rogues across a cyberlit metropolis in a combat-forward arcade shooter with anime-style key art.",
+  },
+  {
+    slug: "crownless-abyss",
+    title: "Crownless Abyss",
+    cover: "https://lh3.googleusercontent.com/sitesv/AA5AbUB9E47Xs8mFP3mJ68aJiOqaTHGPcfLWPojNobMY4fZCIB-N51u1bLFeSUlqe8HYFFFcLD0fHz6XUxVeL7_bBaVNATuSBRVRlCtUBoi-g4UMJshU4Ub3q7KAcJwNdVoVnHsEiyMEuKdCeqbZb9dQTHHRN9In2c1OTzEdkuDrs48uiz5uJRGM8Nz-075bDQIt1fnGhbMBps-1PtjlSY2THX1r93VKI7FtLnjluRE=w1280",
+    genre: "Dark Fantasy RPG",
+    platforms: ["PC", "Steam"],
+    status: "Coming Soon",
+    release: "2026-06-05",
+    tagline: "The throne is empty. The dark is not.",
+    description: "A descent into a ruined kingdom where every choice carves a new scar onto the world below.",
+  },
+  {
+    slug: "czar-decision",
+    title: "CZAR - Decision",
+    cover: "https://lh3.googleusercontent.com/sitesv/AA5AbUCxPzdRoYqPJBqEpBDixt8sXL4wmFKYF-_s8Anm4FwPbpNZs5xb78Z0djzMfRwnHg517UmC-vQsTsvu7h7i1VPrOX5TYxzlD0Ce7B9txF8WHrDYicZ5W2ECQjGmYQD5kDkjmuvW8ybUN4z6XOvdm0R8J1f3I2dfiyVytP1Iw8ZOiNvUTuJ3IYHpuCo=w1280",
+    genre: "Strategy",
+    platforms: ["PC", "Steam"],
+    status: "Out Now",
+    release: "2024-10-20",
+    tagline: "Rule with the weight of every choice.",
+    description: "A narrative-heavy strategy sim where each decision reshapes the map and the people in it.",
+  },
+
+  {
+    slug: "ed-archivist-curse",
+    title: "Eremidia - Archivist Curse",
+    cover: "https://lh3.googleusercontent.com/sitesv/AA5AbUBnMtqxMcFjc45lZIrXJbFRm2ePLdkYn_VxAC9BOLOOIFAZlFAsqG3R4N1TljL6L-j8R0VHZc4OedsyIgOmDdv_L-XXEbA6R0_B-sdhMzb3UPkLkn0Eu4WEfMpfE8FxsbpuTHmJ9S_XO9rL-haHYp0W0xGC6CYFLJmw3i9vzVRitQ5jzRX8t2_rYE1koo1bcjMpWfWqWBPDbHx2IkfTM_yNPju_L84pG40P3Mg=w1280",
+    genre: "JRPG",
+    platforms: ["PC", "Steam"],
+    status: "Out Now",
+    release: "2024-05-03",
+    tagline: "Every book remembers who read it last.",
+    description: "Classic JRPG exploration threaded with a librarian's deep, uneasy magic.",
+  },
+  {
+    slug: "fragmented-memories-arc-one",
+    title: "Fragmented Memories - Arc One",
+    cover: "https://lh3.googleusercontent.com/sitesv/AA5AbUCh1jSSWageWh52SSGruLLDtrCSaeGF2VNTox-rCGLfQ7-Wi0nagqg9gcqP2KoiTlOOx7qzR4cyXxYd0_-85jL457teFg9EvSgof8nSeo0ewfFr25Rhe4fQZFsNDqkgm5hF_XiuKkvSC6urOV8zyhC4JfjuC1U6aNUzWz9IIKtTk1arFX8IuSJL2a1Mu3a7IRni1JYqzPawByoq_OGJoyJORd5Cmcd5HShP=w1280",
+    genre: "Visual Novel",
+    platforms: ["PC", "Steam"],
+    status: "Out Now",
+    release: "2024-02-14",
+    tagline: "Piece the past, one shard at a time.",
+    description: "A branching visual novel that asks whether remembering is the same as forgiving.",
+  },
+  {
+    slug: "insurgence-chains-of-renegade",
+    title: "Insurgence - Chains of Renegade",
+    cover: "https://lh3.googleusercontent.com/sitesv/AA5AbUCqFG9SVUrEWkeFqp95vjlKkSbS8MI5tTu_jNTio1l7pG1HJvhF2PsKNgS7yndfqZzlGP5_P6956YmjjhZXrYVk5TVrn0sTvh7wo2dNCcv7D9D8ExzKQsUd35sevhxOP2PLrNSDJnMX2RxW08DEIdwZ4OybdfQNLaJ8YzSf9CWj6lv6kbdsXCN_=w1280",
+    genre: "Tactical RPG",
+    platforms: ["PC", "Steam"],
+    status: "Out Now",
+    release: "2023-11-09",
+    tagline: "No flag. No honor. Only fight.",
+    description: "The first Insurgence chapter - where mercenaries become a movement.",
+  },
+  {
+    slug: "insurgence-second-assault",
+    title: "Insurgence - Second Assault",
+    cover: "https://lh3.googleusercontent.com/sitesv/AA5AbUCOeNfU_Fyq7mSXNGji3RDD5qy4QgTtlXemzBxZAYWDAjsUUXw0UhY3LZ4buDST31Octa-D6LDcaKsRHA_yahXbuVT3Enn11SkZ7NNgp7hoYgHjS_Z37RK66PBb_Htj-6R8Wco7natD5OU_WX1D0WJa67ngGpIo08ueS_splmRZxvIxyXLIrWPe=w1280",
+    genre: "Tactical RPG",
+    platforms: ["PC", "Steam"],
+    status: "Out Now",
+    release: "2024-06-28",
+    tagline: "Regroup. Reload. Return fire.",
+    description: "The middle chapter - heavier squads, bigger gambits, louder guns.",
+  },
+  {
+    slug: "reach-for-an-angel",
+    title: "Reach for an Angel",
+    cover: "https://lh3.googleusercontent.com/sitesv/AA5AbUBjif5z1pCK18Vi1qUbKZEEGVqQ1gRVoJY_QbIcBwhBMr1mjS3brXZQZEK1gzrVN2MqtNz6wiNCBNiQnHRytqD7FmiiRrGVLvbKFQt7crm8EUsHndzl8FYWzbbdcUI7LOoLZm4Iw2_4xe3pE_Qc0MGtHOuhSEDca_kwu16p3NgdEKoPk-gav9GYpnQi-cdPdtX0htGpPgnRpKUWeH7dIiV-9_CgX_BUJTgu=w1280",
+    genre: "Romance / VN",
+    platforms: ["PC", "Steam"],
+    status: "Out Now",
+    release: "2023-07-07",
+    tagline: "Fall slowly. Rise on purpose.",
+    description: "A summer-bright romance VN with hand-painted skies and quietly devastating choices.",
+  },
+  {
+    slug: "ruins-of-dawnseeker",
+    title: "Ruins of Dawnseeker",
+    cover: "https://lh3.googleusercontent.com/sitesv/AA5AbUBWVavvSKJg2ohCzLN9VF6pGZhUgCyNxGhKcw7qrxg5z_8Le3Uhd3veiA1NrOGeaZztSukRp3MDabWNCQXn8y8WGlTs_HFixjan73BeZOC05zOMjzmIaSq18Sh5uSx_R27qXGSqgQE3dGnAGxbn7nO_pD5O16hwU_HkeXnRpTtdDfDKBkxvG19N=w1280",
+    genre: "Roguelite",
+    platforms: ["PC", "Steam"],
+    status: "Early Access",
+    release: "2025-04-22",
+    tagline: "One more run toward the sun.",
+    description: "A relic-hunting roguelite with gorgeous painterly vistas and ruthlessly clever enemies.",
+  },
+  {
+    slug: "twilight-memoria-sun-moon",
+    title: "Twilight Memoria - Sun & Moon",
+    cover: "https://lh3.googleusercontent.com/sitesv/AA5AbUDUKI_92NQv0zc2WQVzV2R42m4wluuFGk-c2G4expzLcI5eCmiWswlk6Otaz7PJf1prTmEtgJTWiqq7nTS4RB5v60qnKYmyQDXQKlnEhaf6zwpj1qIrHF6VnZhZsfqPsAcHXewZREVBN2LBeU9kT7Zb9RxzvyYVaHBLdIIZakxqN0N7TeQR3_eb=w1280",
+    genre: "RPG",
+    platforms: ["PC", "Steam"],
+    status: "Out Now",
+    release: "2023-03-15",
+    tagline: "Two skies. One horizon.",
+    description: "A dual-perspective RPG where day and night write each other's stories.",
+  },
+  {
+    slug: "twilight-memoria-freedoom",
+    title: "Twilight Memoria - Freedom",
+    cover: "https://lh3.googleusercontent.com/sitesv/AA5AbUAPK_ePfodNoT20xkY45R8-5wYGmRjqhhVu0k249E1H5lHiXxP71t5tiVQlHvc_F0MczXKWZiBxHo9rn6zvHh0hazuqWNmq8i5g0-PEwVLRPxgTrr3lQK83udc6bs2P-sJ1hxoqzO7uUsm5mKGwWCaz-CluaqclxPPuF6JK3MFq0M-mawkU8nFRS49vZKh61zUCtVEeIV4ysx6b6y-UYLwg5jyjRSuvnhNvQUg=w1280",
+    genre: "RPG",
+    platforms: ["PC", "Steam"],
+    status: "Coming Soon",
+    release: "2026-03-20",
+    tagline: "The sequel arrives at last light.",
+    description: "The long-awaited second arc of Twilight Memoria - larger maps, deeper party mechanics.",
+  },
+  {
+    slug: "your-shining-youth",
+    title: "Your Shining Youth",
+    cover: "https://lh3.googleusercontent.com/sitesv/AA5AbUA4jNNgtgrMyPn7V85Rx8TLU4CXRXwjwbTeaO0A9qBpxAw5Kj1SNayomOSJOYT24SbPd2Y0G-TfbsrR4kBA8VubqkjSEjhujQxlfvc_lIyx-IS7f8MrD3WPl9DrMEeTcGSxtQ8dO9C4g13X6S8X8ZaQF0hziK3KKhad8xyaCBls2mG9E1dTFZh-=w1280",
+    genre: "Slice of Life",
+    platforms: ["PC", "Steam"],
+    status: "Out Now",
+    release: "2023-04-01",
+    tagline: "The flagship title.",
+    description: "The studio's namesake - a school-days slice-of-life visual novel that started it all.",
+  },
+];
+
+window.YSY_STUDIO = {
+  name: "YSY Softworks",
+  steam: "https://store.steampowered.com/publisher/ysysoftworks",
+  twitter: "https://twitter.com/ysysoftworks",
+  facebook: "https://www.facebook.com/ysysoftworks",
+  copy: "Welcome to YSY Softworks! We're a global PC game developer & publisher focused on Japanese ACG culture, creating visually stunning anime-style games. Our mission is to provide engaging gameplay, beautiful graphics, and unique storylines that transport you to imaginative and immersive worlds. With a diverse range of games, we're constantly pushing the boundaries of what's possible in game development. Thank you for visiting, and we hope you enjoy our games!",
+};
+
+</script>
+<script type="text/babel">
+/* YSY Softworks — shared chrome components (React, inline JSX). */
+
+/* ---------- Placeholder art generator ----------
+   Real covers are hotlink-protected by Google Sites. We generate a styled
+   SVG cover per game based on a hash of its slug, so imagery reads strong
+   even when the real key art can't load. When a user drops real URLs in,
+   the real image overlays on top automatically. */
+function hashStr(s) {
+  let h = 0;
+  for (let i = 0; i < s.length; i++) h = ((h << 5) - h + s.charCodeAt(i)) | 0;
+  return Math.abs(h);
+}
+const PALETTES = [
+  ["#0c1a2e", "#0284c7", "#f59e0b"],  // sky blue→amber
+  ["#0b1d3a", "#0ea5e9", "#bae6fd"],  // deep sky blue
+  ["#3d0a1a", "#e11d48", "#fb923c"],  // crimson
+  ["#0a2e2e", "#14b8a6", "#a7f3d0"],  // teal
+  ["#2c1a00", "#d97706", "#fde68a"],  // amber
+  ["#0a1a2e", "#38bdf8", "#f0f9ff"],  // light blue
+  ["#0a1d1a", "#22c55e", "#facc15"],  // forest
+  ["#0a1a2e", "#0369a1", "#7dd3fc"],  // deep blue
+  ["#1a1a2e", "#0284c7", "#bae6fd"],  // blue
+];
+function placeholderSVG(title, slug, genre) {
+  const h = hashStr(slug);
+  const [c1, c2, c3] = PALETTES[h % PALETTES.length];
+  const angle = (h % 180);
+  const initials = title.replace(/[^A-Za-z ]/g,"").split(/\s+/)
+    .map(w => w[0]).filter(Boolean).slice(0,3).join("").toUpperCase();
+  const r1 = 20 + (h % 30);
+  const r2 = 40 + ((h >> 3) % 40);
+  const svg = `
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600' preserveAspectRatio='xMidYMid slice'>
+  <defs>
+    <linearGradient id='g' x1='0' y1='0' x2='1' y2='1' gradientTransform='rotate(${angle} 0.5 0.5)'>
+      <stop offset='0%' stop-color='${c1}'/>
+      <stop offset='60%' stop-color='${c2}' stop-opacity='0.85'/>
+      <stop offset='100%' stop-color='#07070c'/>
+    </linearGradient>
+    <radialGradient id='glow' cx='${30 + (h%40)}%' cy='${20 + (h%50)}%' r='60%'>
+      <stop offset='0%' stop-color='${c3}' stop-opacity='0.55'/>
+      <stop offset='60%' stop-color='${c3}' stop-opacity='0.0'/>
+    </radialGradient>
+    <pattern id='grid' width='40' height='40' patternUnits='userSpaceOnUse'>
+      <path d='M 40 0 L 0 0 0 40' fill='none' stroke='rgba(255,255,255,0.04)' stroke-width='1'/>
+    </pattern>
+  </defs>
+  <rect width='800' height='600' fill='url(#g)'/>
+  <rect width='800' height='600' fill='url(#grid)'/>
+  <circle cx='${620 - (h%200)}' cy='${180 + (h%120)}' r='${r2*3}' fill='${c3}' opacity='0.08'/>
+  <circle cx='${200 + (h%180)}' cy='${420 + (h%60)}' r='${r1*3}' fill='${c2}' opacity='0.18'/>
+  <rect width='800' height='600' fill='url(#glow)'/>
+  <g opacity='0.12' transform='translate(${80 + (h%120)},${220 + (h%60)})'>
+    <text x='0' y='0' font-family='Orbitron, sans-serif' font-weight='900' font-size='380' fill='${c3}'>${initials}</text>
+  </g>
+  <g transform='translate(48,500)'>
+    <text font-family='JetBrains Mono, monospace' font-size='14' fill='rgba(255,255,255,0.6)' letter-spacing='2'>${(genre||"").toUpperCase()}</text>
+    <text y='36' font-family='Orbitron, sans-serif' font-weight='800' font-size='32' fill='#fff' letter-spacing='1'>${title.replace(/—/g,"-").slice(0,28)}</text>
+  </g>
+  <rect x='0' y='580' width='800' height='20' fill='#07070c'/>
+  <rect x='0' y='0' width='6' height='600' fill='${c3}' opacity='0.7'/>
+</svg>`.trim();
+  return `url("data:image/svg+xml;utf8,${encodeURIComponent(svg)}")`;
+}
+function coverBg(g) { return placeholderSVG(g.title, g.slug, g.genre); }
+window.coverBg = coverBg;
+
+
+const YSY_NAV = [
+  { label: "Home", href: "index.html", key: "home" },
+  { label: "All Games", href: "games.html", key: "games" },
+  { label: "Publishing", href: "publishing.html", key: "publishing" },
+  { label: "Press", href: "press.html", key: "press" },
+  { label: "Blog", href: "blog.html", key: "blog" },
+  { label: "About", href: "about.html", key: "about" },
+];
+
+function YsyHeader({ active }) {
+  const [menuOpen, setMenuOpen] = React.useState(false);
+  return (
+    <header className="chrome">
+      <div className="chrome__inner">
+        <a href="index.html" className="logo" aria-label="YSY Softworks home">
+          <span className="logo__mark">Y</span>
+          <span>YSY&nbsp;·&nbsp;SOFTWORKS</span>
+        </a>
+        <nav className="nav">
+          {YSY_NAV.map(n => (
+            <a key={n.key} href={n.href} {...(active === n.key ? { "data-active": "true" } : {})}>
+              {n.label}
+            </a>
+          ))}
+        </nav>
+        <a className="chrome__cta" href="https://store.steampowered.com/publisher/ysysoftworks" target="_blank" rel="noopener">
+          Steam ↗
+        </a>
+        <button
+          className="nav-burger"
+          aria-label="Toggle menu"
+          onClick={() => setMenuOpen(o => !o)}
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      {menuOpen && (
+        <div className="mobile-nav">
+          {YSY_NAV.map(n => (
+            <a key={n.key} href={n.href}
+              className={active === n.key ? "mobile-nav__link active" : "mobile-nav__link"}
+              onClick={() => setMenuOpen(false)}>
+              {n.label}
+            </a>
+          ))}
+          <a className="mobile-nav__link" href="https://store.steampowered.com/publisher/ysysoftworks" target="_blank" rel="noopener">Steam ↗</a>
+        </div>
+      )}
+    </header>
+  );
+}
+
+function YsyFooter() {
+  const s = window.YSY_STUDIO;
+  return (
+    <footer className="foot">
+      <div className="foot__inner">
+        <div>
+          <div className="logo" style={{ marginBottom: 16 }}>
+            <span className="logo__mark">Y</span>
+            <span>YSY&nbsp;·&nbsp;SOFTWORKS</span>
+          </div>
+          <p style={{ color: "var(--ink-dim)", fontSize: 13, maxWidth: 360, margin: 0 }}>
+            Global PC game developer &amp; publisher focused on Japanese ACG culture —
+            visually stunning anime-style games across RPG, VN, strategy and action.
+          </p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="games.html">All games</a></li>
+            <li><a href="games.html">Upcoming</a></li>
+            <li><a href="press.html">Press kit</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Studio</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="publishing.html">Publishing</a></li>
+            <li><a href="press.html">Press</a></li>
+            <li><a href="mailto:ysysoftworks@gmail.com">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Follow</h4>
+          <ul>
+            <li><a href={s.steam} target="_blank" rel="noopener">Steam ↗</a></li>
+            <li><a href={s.twitter} target="_blank" rel="noopener">Twitter / X ↗</a></li>
+            <li><a href={s.facebook} target="_blank" rel="noopener">Facebook ↗</a></li>
+          </ul>
+        </div>
+      </div>
+      <div className="foot__base">
+        <span>© 2023–2026 YSY Softworks. All rights reserved.</span>
+        <span>v 2.0 · Redesign concept</span>
+      </div>
+    </footer>
+  );
+}
+
+/* ---------- Tile ---------- */
+function GameTile({ g, href }) {
+  return (
+    <a className="tile" href={href || `game.html?slug=${g.slug}`}>
+      <div className="tile__img" style={{ backgroundImage: coverBg(g) }} />
+      <div className="tile__scrim" />
+      <div className="tile__glow" />
+      <span className="tile__status" data-s={g.status}>{g.status}</span>
+      <div className="tile__body">
+        <span className="tile__genre">{g.genre}</span>
+        <h3 className="tile__title">{g.title}</h3>
+      </div>
+    </a>
+  );
+}
+
+/* ---------- Tweaks (density) ---------- */
+function Tweaks() {
+  const [on, setOn] = React.useState(false);
+  const [density, setDensity] = React.useState(() =>
+    localStorage.getItem("ysy-density") || "default"
+  );
+
+  React.useEffect(() => {
+    const root = document.documentElement;
+    if (density === "default") root.removeAttribute("data-density");
+    else root.setAttribute("data-density", density);
+    localStorage.setItem("ysy-density", density);
+  }, [density]);
+
+  React.useEffect(() => {
+    const handler = (e) => {
+      if (!e.data) return;
+      if (e.data.type === "__activate_edit_mode") setOn(true);
+      if (e.data.type === "__deactivate_edit_mode") setOn(false);
+    };
+    window.addEventListener("message", handler);
+    try { window.parent.postMessage({ type: "__edit_mode_available" }, "*"); } catch (_) {}
+    return () => window.removeEventListener("message", handler);
+  }, []);
+
+  return (
+    <div id="tweaks-panel" className={on ? "on" : ""}>
+      <h5>Tweaks <span>/ density</span></h5>
+      <div className="tw-row">
+        {["compact","default","comfortable"].map(d => (
+          <button
+            key={d}
+            className="tw-btn"
+            data-on={density === d ? "1" : "0"}
+            onClick={() => setDensity(d)}
+          >{d}</button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+Object.assign(window, { YsyHeader, YsyFooter, GameTile, Tweaks });
+
+</script>
+
+<script type="text/babel">
+const PRESS_CARDS = [
+  { tag: "Press", title: "Press Releases", body: "Get official announcements, game reveal news, and studio updates directly from us.", href: "mailto:huangyuoxi@gmail.com", cta: "Request Press Release →" },
+  { tag: "Steam Keys", title: "Review Keys", body: "Content creators, reviewers and press can request Steam keys for any of our published titles.", href: "mailto:huangyuoxi@gmail.com", cta: "Request Steam Key →" },
+  { tag: "Partnership", title: "Partnerships", body: "Open to sponsored content, affiliate programs, and co-promotional deals. Let's talk.", href: "mailto:huangyuoxi@gmail.com", cta: "Discuss Partnership →" },
+];
+
+function PressPage() {
+  return (
+    <>
+      <YsyHeader active="press" />
+      <main className="page" data-screen-label="06 Press">
+        <section className="press-hero">
+          <div>
+            <span className="eyebrow">Media & Press</span>
+            <h1>Work with<br/><em>YSY</em> Softworks.</h1>
+          </div>
+          <p className="lead">Are you an influencer, blogger, YouTuber, Vtuber, or just love playing video games? We're looking for opportunities to partner with individuals like you.</p>
+        </section>
+
+        <div className="press-grid">
+          {PRESS_CARDS.map(c => (
+            <div key={c.tag} className="press-card">
+              <span className="tag">{c.tag}</span>
+              <h3>{c.title}</h3>
+              <p>{c.body}</p>
+              <a href={c.href}>{c.cta}</a>
+            </div>
+          ))}
+        </div>
+
+        <section className="press-body">
+          <p>YSY Softworks is a global PC game publisher specializing in anime-style games. We offer Steam keys to members of the press, influencers, and content creators interested in reviewing or featuring our games on their platforms.</p>
+          <p>We're also open to discussing potential partnership opportunities, such as sponsored content or affiliate programs. We're excited about the opportunity to work with you and share our passion for gaming with your audience.</p>
+        </section>
+
+        <section>
+          <div className="section__head">
+            <h2 className="section__title">Get in <em>Touch</em></h2>
+          </div>
+          <div className="cta-row">
+            <a className="btn btn--primary" href="mailto:huangyuoxi@gmail.com">Press Release Inquiry →</a>
+            <a className="btn btn--ghost" href="mailto:huangyuoxi@gmail.com">Request Steam Key →</a>
+          </div>
+        </section>
+      </main>
+
+      <YsyFooter />
+      <Tweaks />
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<PressPage />);
+</script>
+</body>
+</html>
