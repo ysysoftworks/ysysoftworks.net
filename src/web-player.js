@@ -6,7 +6,25 @@
   const launch = document.getElementById('player-launch');
   const status = document.getElementById('player-status');
   const fullscreen = document.getElementById('player-fullscreen');
+  const helpBar = document.getElementById('player-help-bar');
+  const hideHelp = document.getElementById('player-hide-help');
+  const showHelp = document.getElementById('player-show-help');
   let started = false;
+
+  hideHelp.addEventListener('click', () => {
+    helpBar.hidden = true;
+    hideHelp.setAttribute('aria-expanded', 'false');
+    showHelp.hidden = false;
+    if (started) frame.focus();
+    else showHelp.focus();
+  });
+
+  showHelp.addEventListener('click', () => {
+    helpBar.hidden = false;
+    hideHelp.setAttribute('aria-expanded', 'true');
+    showHelp.hidden = true;
+    hideHelp.focus();
+  });
 
   start.addEventListener('click', () => {
     if (started) return;
