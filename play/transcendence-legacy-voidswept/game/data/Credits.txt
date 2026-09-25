@@ -1,0 +1,121 @@
+Text that appears outside of the block tags
+will not display in the credits scene
+
+<block:-1,-1,10,10,offbot,center,credits_bg>
+
+\fb\fs[32]\c[16]《 Credits 》\fr
+
+\fb\c[16]Created and Developed by\fr
+Xurzerth
+
+\fb\c[16]Published by\fr
+YSY Softworks
+
+\fb\c[16]Powered by\fr
+RPG Maker MV
+
+\fb\fs[32]\c[16]《 Graphics Credits 》\fr
+
+\fb\c[16]Character Illustrations\fr
+Harycchou
+
+\fb\c[16]Icons\fr
+sbed, Delapouite, Lorc, Skoll
+\fi(from game-icons.net)\fr
+
+\fb\c[16]Enemy Artworks\fr
+qut
+\fi(https://lud.sakura.ne.jp/battler.php)\fr
+
+\fb\c[16]RPG Maker FES Resource Pack\fr
+© Gotcha Gotcha Games Inc.
+
+\fb\c[16]RPG Maker MV & MZ Default Resources\fr
+KADOKAWA CORPORATION / YOJI OJIMA
+Gotcha Gotcha Games Inc. / YOJI OJIMA
+
+\fb\c[16]RPG Maker DS Resource Pack\fr
+© Gotcha Gotcha Games Inc.
+Archeia, EvilEagles
+
+\fb\c[16]Weapon Sprites\fr
+whtdragon
+
+\fb\c[16]Other Graphics\fr
+Xurzerth
+
+\fb\fs[32]\c[16]《 Plugin Credits 》\fr
+
+\fb\c[16]Yanfly Engine Plugins\fr
+Yanfly
+
+\fb\c[16]Yanfly Battle Status Extension\fr
+DreamX
+
+\fb\c[16]Weakness Display, Anti Player Stress\fr
+Fallen Angel Olivia
+
+\fb\c[16]Element Boost, Equip Skill System\fr
+Moogle X
+
+\fb\c[16]Screen Layout Size\fr
+Douraku
+
+\fb\c[16]Moghunter Plugins\fr
+Moghunter
+
+\fb\c[16]Custom Battle Intro, Battle UI Core\fr
+SRDude
+\fi(sumrndm.site)\fr
+
+\fb\c[16]Stat Polygon\fr
+mjshi
+
+\fb\c[16]Message Sound Effect, Roll Credits\fr
+Galv
+
+\fb\c[16]Alt. Menu Screen\fr
+Yoji Ojima, Sasuka KANNAZUKI
+
+\fb\c[16]Enemy Book\fr
+Yoji Ojima
+
+\fb\c[16]Hide Idle Mouse\fr
+Nolonoar
+
+\fb\c[16]Choice Window Placement\fr
+Xurzerth
+
+\fb\c[16]Orange Greenworks\fr
+Hudell
+
+\fb\c[16]Graphics Render Fix\fr
+kido
+
+\fb\fs[32]\c[16]《 Audio Credits 》\fr
+
+\fb\c[16]Emotional II: Voice of Angel Music Pack\fr
+© Richard, John S
+Published by Degica Co., LTD
+
+\fb\c[16]PeriTune Free Music Material\fr
+\fihttps://peritune.com\fr
+
+\fb\c[16]Wingless Seraph / YouFulca\fr
+\fihttps://wingless-seraph.net\fr
+
+\fb\c[16]RPG Maker MV & MZ Default Resources\fr
+KADOKAWA CORPORATION / YOJI OJIMA
+Gotcha Gotcha Games Inc. / YOJI OJIMA
+
+\fb\fs[32]\c[16]《 Special Thanks 》\fr
+
+Ansaksie Asha
+Muhammad Riza Khairani
+
+And special thanks to \fbyou\fr,
+for playing!
+
+</block>
+
+Test

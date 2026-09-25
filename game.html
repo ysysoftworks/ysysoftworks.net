@@ -202,6 +202,7 @@ window.YSY_GAMES = [
   {
     slug: "transcendence-legacy-voidswept",
     title: "Transcendence Legacy - Voidswept",
+    playUrl: "/play/transcendence-legacy-voidswept/",
     cover: "https://lh3.googleusercontent.com/sitesv/AA5AbUC5ldXj0M3NUr2wC64BE915jR6YSBPQfwcGpkkqsrj_c5eZMg1h5lH8EVTTD-T2EqvVp-asaRyJbFTuEj7BOpVP1bVnBrLR59aHqL29YDlnb0u7WyXOOHtydV953hy1PviY_mMp-nZZGmDvTwzLK6GfO3POBbfJig2D8YuZqV8O4600sbWbqW9RvelDlwE2U3h8wKpPE8-kY0ULb7-6zIlne2bi1ODb3viH=w1280",
     genre: "Action RPG",
     platforms: ["PC", "Steam"],
@@ -631,6 +632,7 @@ function GameDetail() {
             {g.platforms.map(p => <span key={p}>{p}</span>)}
           </div>
           <div className="ctas">
+            {g.playUrl && <a className="btn btn--primary" href={g.playUrl}>▶ Play Online</a>}
             <a className="btn btn--primary" href="https://store.steampowered.com/publisher/ysysoftworks" target="_blank" rel="noopener">
               {g.status === "Coming Soon" ? "Wishlist on Steam" : "Get on Steam"} ↗
             </a>
@@ -670,6 +672,7 @@ function GameDetail() {
             <div className="meta-row"><span>Status</span><span>{g.status}</span></div>
             <div className="meta-row"><span>Platforms</span><span>{g.platforms.join(" · ")}</span></div>
             <div className="meta-row"><span>Publisher</span><span>YSY Softworks</span></div>
+            {g.playUrl && <a className="btn btn--primary" href={g.playUrl}>▶ Play Online</a>}
             <a className="btn btn--primary" href="https://store.steampowered.com/publisher/ysysoftworks" target="_blank" rel="noopener">
               {g.status === "Coming Soon" ? "Wishlist" : "View on Steam"} ↗
             </a>
