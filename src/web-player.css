@@ -27,7 +27,12 @@
 .player-basic-controls kbd { padding: 2px 5px; border: 1px solid #546078; border-radius: 3px; font: 11px var(--font-mono); color: #fff; }
 .player-toolbar #player-status { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .player-toolbar-actions { display: flex; flex-shrink: 0; gap: 10px; }
-.player-show-help { position: absolute; bottom: 12px; right: 12px; z-index: 2; background: #090d19e8; }
+.player-show-help { position: absolute; bottom: 12px; right: 12px; z-index: 2; background: #090d19e8; opacity: 1; animation: player-help-idle 240ms ease 3s forwards; }
+.player-show-help:hover { animation: none; opacity: 1; }
+@keyframes player-help-idle { to { opacity: .1; } }
+@media (prefers-reduced-motion: reduce) {
+  .player-show-help { animation-duration: 0s; }
+}
 .player-fullscreen { display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; font-size: 12px; padding: 7px 10px; border: 1px solid #546078; border-radius: 4px; color: #fff; }
 .player-fullscreen:disabled { opacity: .45; cursor: default; }
 .player-fullscreen:not(:disabled):hover { background: #ffffff16; }
